@@ -1,0 +1,36 @@
+# Expo / React Native
+node_modules/
+.expo/
+dist/
+build/
+.expo-shared/
+android/
+ios/
+*.android.js.map
+*.ios.js.map
+package-lock.json
+
+# 画像・アセット
+assets/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ttf
+*.otf
+
+# テスト
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+coverage/
+
+# ログ
+*.log
+logs/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+.git/
