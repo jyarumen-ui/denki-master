@@ -1,0 +1,35 @@
+{
+  "language": "japanese",
+  "skipDangerousModePermissionPrompt": true,
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "deny": [
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf ~*)",
+      "Bash(format *)",
+      "Bash(del /f /s /q C:\\*)",
+      "Bash(DROP DATABASE*)",
+      "Bash(DROP TABLE*)"
+    ]
+  },
+  "mcpServers": {
+    "codex": {
+      "command": "codex",
+      "args": ["mcp-server"],
+      "env": {}
+    }
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx tsc --noEmit 2>&1 | head -20 || exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}
